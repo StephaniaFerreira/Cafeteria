@@ -66,7 +66,7 @@ Esse arquivo é carregado pela classe/record `AppSettings` (em `AppSettings.cs`)
 - `Funcionario/Program.cs`
 - `Cafeteria.Tests`
 
-Assim, se for necessário alterar o endereço do RabbitMQ, basta mudar **um único lugar** (`cafeteria.config.json`), evitando duplicação de configuração.
+Se for necessário alterar o endereço do RabbitMQ, basta mudar **um único lugar** (`cafeteria.config.json`), evitando duplicação de configuração.
 
 ---
 
@@ -113,7 +113,7 @@ Os testes fazem:
 
 ## Decisões e refatorações importantes
 
-Ao longo do desenvolvimento, como desenvolvedora, fiz algumas melhorias para deixar o código mais limpo, expressivo e adequado para portfólio.
+Considerando que utilizei este projeto para experimentar o desenvolvimento com cursor enviei o prompt para implementar a API, após a implementação eu pedi alterações nas decisões a seguir para que o projeto ficasse melhor modelado.
 
 ### 1. De tupla para tipo forte (`MenuItem`)
 
@@ -121,7 +121,7 @@ Inicialmente, os itens do cardápio eram representados como uma **tupla** no dic
 
 - `Dictionary<int, (string Nome, decimal Preco)>`
 
-Isso funciona, mas para um projeto de portfólio fica mais legível e extensível ter um **tipo dedicado**.  
+Isso funciona, mas fica mais legível e extensível ter um **tipo dedicado**.  
 Por isso, foi criado o `record`:
 
 - `record MenuItem(string Nome, decimal Preco);`
